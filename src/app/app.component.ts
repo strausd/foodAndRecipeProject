@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  loadedFeature = 'recipe';
+
+  onHeaderClick(feature: string) {
+    this.loadedFeature = feature;
+  }
+
 }
