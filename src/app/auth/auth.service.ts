@@ -20,11 +20,20 @@ export class AuthService {
       .catch(err => console.log(err));
   }
 
+  logout() {
+    firebase.auth().signOut();
+    this.token = null;
+  }
+
   getToken() {
     firebase.auth().currentUser.getToken()
     .then((token: string) => {
       this.token = token;
     });
     return this.token;
+  }
+
+  isAuthenticated() {
+    return this.token != null;
   }
 }
