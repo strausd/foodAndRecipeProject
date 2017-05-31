@@ -15,11 +15,11 @@ const forceSSL = function() {
   }
 }
 
-app.use(forceSSL());
-
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/index.html'));
-});
+// app.use(forceSSL());
+//
+// app.get('/*', function(req, res) {
+//   res.sendFile(path.join(__dirname + '/dist/index.html'));
+// });
 
 app.listen(process.env.PORT || 3000, () => {
   console.log('Server started...')
